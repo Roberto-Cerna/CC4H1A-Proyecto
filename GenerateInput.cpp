@@ -35,7 +35,7 @@ int main(){
 		int correct;
 		correct = rand()%2;
 		int S = 0;
-		int n = rand()%14 + 5;
+		int n = rand()%20 + 5;
 
 		vector<int> new_vector;	
 		for(int j=0; j<n; j++){
