@@ -135,5 +135,17 @@ int main(){
 		stop = high_resolution_clock::now();
 		duration = duration_cast<microseconds>(stop - start);
 		myoutputfile<<setw(10)<<to_string(duration.count())<<setw(10)<<"Ms\n";
+		mis_respuesta_mitm.push_back(sol);
 	}
+
+	cout<<"Solución Real"<<setw(8)<<"Naive"<<setw(8)<<"MITM"<<endl;
+	for(int i=0;i<numberCases;i++){
+		cout<<setw(8)<<respuestas[i]<<setw(10)<<mis_respuesta_naive[i]<<setw(10)<<mis_respuesta_mitm[i];
+		if((respuestas[i] == mis_respuesta_naive[i]) && respuestas[i] == mis_respuesta_mitm[i])
+			cout<<setw(12)<<"Correcto"<<endl;
+		else
+			cout<<setw(12)<<"Incorrecto"<<endl;
+		
+	}
+
 }
